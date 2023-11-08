@@ -1,22 +1,16 @@
-class Mean : public IStatistics {
-public:
-	Mean() : m_mean{0.0}, count{0} {
-	}
-	
-	void update(double next) override {
-		m_mean += next;
-		count++;
-	}
+#include "statistics.h"
+#include <numeric>
+//#include <vector>
 
-	double eval() const override {
-		return m_mean / count;
-	}
+void Mean::update(double next) {
+	vnums.push_back(next);
+}
 
-	const char * name() const override {
-		return "mean";
-	}
+double Mean::eval() const {
+	double nums_sum = std::accumulate(vnums.begin(), vnums.end(), 0);
+	return nums_sum / vnums.size();
+}
 
-private:
-	double m_mean;
-	int count;
-};	
+const char * Mean::name() const {
+	return "mean";
+}
