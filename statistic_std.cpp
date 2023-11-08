@@ -13,7 +13,6 @@ double Std::eval() const {
 	for (size_t i = 0; i < size; i++) {
 		result += pow(vnums[i] - avg, 2);
 	}
-	
 	return sqrt(result / size);
 }
 
