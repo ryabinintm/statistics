@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-	Mean minimum_value;
+	Std minimum_value;
 	double value;
 
 	while (std::cin >> value) {

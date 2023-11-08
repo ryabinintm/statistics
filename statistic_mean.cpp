@@ -1,6 +1,5 @@
 #include "statistics.h"
 #include <numeric>
-//#include <vector>
 
 void Mean::update(double next) {
 	vnums.push_back(next);

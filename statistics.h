@@ -44,14 +44,12 @@ private:
 };	
 
 
-
 class Std : public IStatistics {
 public:
-	Std();
+	Std() = default;
 	void update(double next) override;
 	double eval() const override;
 	const char * name() const override;
 private:
-	double m_std;
-	int count;
+	std::vector<double> vnums;
 };	
